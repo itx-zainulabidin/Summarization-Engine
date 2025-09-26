@@ -1,0 +1,43 @@
+                                                        PUNJAB SCIENCE ACADEMY, LAHORE
+                                                                        Computer (1st year)
+Chapter#03
+Question_01
+Multiple Choice Questions
+1. Which of the following is a characteristic of a well-defined problem?
+(a) Ambiguous goals and unclear requirements
+(b) Vague processes and inputs
+(c) Clear goals, inputs, processes, and outputs
+(a) Undefined solutions
+2. Which of the following is true for unsolvable problems?
+(a) They can be solved in polynomial time.
+(b) They cannot be solved by any algorithm.
+(c) They are always in NP class.
+(d) They require exponential time to solve.
+3. What does NP stand for in computational complexity?
+(a) Non-deterministic Polynomial time
+(b) Negative Polynomial time
+(c) Non-trivial Polynomial time
+(d) Numerical Polynomial time
+(4) Which of the following search algorithm is more efficient for large datasets?
+(a) Bubble Sort
+(b) Merge Sort
+(c) Selection Sort
+(d) Quick Sort
+5.Which of the following algorithms is used for sorting data by repeatedly stepping through the list and swapping adjacent elements if they are in the wrong order?
+
+(a) Selection Sort
+(b) Quick Sort
+(c) Bubble Sort
+(d) Merge Sort
+Question_02 (10 marks)
+Short Questions (Attempt any five)
+1.What is computational problem?
+2.Generate and test algorithm using main steps.
+3.Difference between solvable and unsolvable problems.
+4.Define greedy algorithm with example.
+5.What is BFS?
+6.Explain dynamic programming.
+Question_03 (10 marks)
+Long Questions (Attempt all)
+1.Explain efficiency and scalability.
+2.Explain algorithm analysis with time complexity and big o notation.

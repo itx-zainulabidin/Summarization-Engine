@@ -1,0 +1,70 @@
+# ------------------------
+# Python
+# ------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+*.egg
+*.log
+
+# Virtual environment
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# ------------------------
+# PyCharm / VSCode
+# ------------------------
+.idea/
+.vscode/
+*.swp
+
+# ------------------------
+# Hugging Face / Transformers
+# ------------------------
+# Cache for models and datasets
+.cache/
+huggingface/
+~/.cache/huggingface/
+~/.huggingface/
+
+# Model files
+*.bin
+*.h5
+*.ckpt
+*.safetensors
+*.pt
+*.pth
+
+# ------------------------
+# Datasets
+# ------------------------
+*.arrow
+*.parquet
+*.jsonl
+*.tsv
+*.csv
+
+# ------------------------
+# Outputs
+# ------------------------
+results/
+outputs/
+runs/
+checkpoints/
+wandb/
+lightning_logs/
+
+# ------------------------
+# OS files
+# ------------------------
+.DS_Store
+Thumbs.db
