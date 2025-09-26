@@ -14,7 +14,7 @@ app = FastAPI(title="Summarizer Prototype API")
 
 
 class SummRequest(BaseModel):
-     """
+    """
     Request body for summarization API.
     - doc_id: filename inside /data folder (txt, pdf, docx, srt)
     - mode: summary length/type (tldr | short | extended)
