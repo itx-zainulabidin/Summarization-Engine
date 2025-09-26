@@ -14,13 +14,29 @@ app = FastAPI(title="Summarizer Prototype API")
 
 
 class SummRequest(BaseModel):
+     """
+    Request body for summarization API.
+    - doc_id: filename inside /data folder (txt, pdf, docx, srt)
+    - mode: summary length/type (tldr | short | extended)
+    - export: optional export format (pdf | docx | txt)
+    """
     doc_id: str
     mode: str  # tldr | short | extended
     export: Optional[str] = None  # pdf | docx | txt
 
 
+
+# summarize endpoint
 @app.post("/api/summarize")
 def summarize(req: SummRequest):
+    """
+    Main summarization pipeline:
+    1. Load document text from /data folder
+    2. Perform extractive summarization (TextRank)
+    3. Run abstractive summarization on extracted text
+    4. Map provenance between summary and source sentences
+    5. Optionally export summary to PDF/DOCX/TXT
+    """
     # Load text by doc_id
     text = ingest.load_text(req.doc_id)
     if text is None:

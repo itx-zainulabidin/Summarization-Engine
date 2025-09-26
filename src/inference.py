@@ -20,6 +20,20 @@ except Exception as e:
 
 
 def summarize_document(text: str, mode: str = "short") -> str:
+    """
+    Summarize a document using an abstractive model (BART or other Seq2Seq).
+
+    Args:
+        text (str): Input document text to summarize.
+        mode (str): Summary length style:
+            - "tldr": very short (~1–2 sentences)
+            - "short": medium length summary
+            - "extended": longer summary
+
+    Returns:
+        str: Generated summary text (joined across chunks if needed).
+    """
+    
     # Limit based on mode
     if mode == "tldr":
         max_len = 60

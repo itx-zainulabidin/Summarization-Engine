@@ -1,4 +1,22 @@
 def map_provenance(summary: str, extracted_sentences: list):
+    """
+    Map each summary sentence back to its most similar source sentence
+    from the extracted sentences, using simple word-overlap scoring.
+
+    Args:
+        summary (str): The generated summary text.
+        extracted_sentences (list): List of extracted sentences, 
+            each a dict with:
+                - "id": unique sentence index
+                - "text": sentence text
+                - "meta": optional metadata
+
+    Returns:
+        list[dict]: Provenance mapping for each summary sentence with:
+            - "sentence_id": ID of the most similar extracted sentence
+            - "meta": metadata of the source sentence
+            - "score": word-overlap score
+    """
     summary_sents = [s.strip() for s in summary.split(". ") if s.strip()]
     sources = []
 

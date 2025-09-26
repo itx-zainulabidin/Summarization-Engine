@@ -7,7 +7,17 @@ DATA_DIR = os.path.join(BASE_DIR, "data")
 
 
 def load_text(doc_id: str) -> str:
+    """
+    Load text from a file given its doc_id (filename).
+    Supports TXT, PDF, DOCX, and SRT formats.
 
+    Args:
+        doc_id (str): The filename (with extension) of the document.
+
+    Returns:
+        str: Extracted text or an error message if unsupported format or file not found.
+    """
+    
     file_path = os.path.join(DATA_DIR, doc_id)
     if not os.path.exists(file_path):
         return f"[Error: file not found: {file_path}]"
@@ -34,6 +44,16 @@ def load_text(doc_id: str) -> str:
 
 
 def split_into_sentences(text: str):
+    """
+    Split text into sentences using regex rules.
+    Handles '.', '!', and '?' as sentence boundaries.
+
+    Args:
+        text (str): Input text.
+
+    Returns:
+        list[str]: List of sentences.
+    """
 
     import re
     sentences = re.split(r'(?<=[.!?]) +', text.strip())
@@ -41,6 +61,16 @@ def split_into_sentences(text: str):
 
 
 def load_pdf(doc_id: str) -> str:
+    
+    """
+    Extract text from a PDF file.
+
+    Args:
+        doc_id (str): PDF filename.
+
+    Returns:
+        str: Extracted text or error message.
+    """
     path = os.path.join(DATA_DIR, doc_id)
     text = []
     try:
@@ -53,6 +83,15 @@ def load_pdf(doc_id: str) -> str:
 
 
 def load_docx(doc_id: str) -> str:
+    """
+    Extract text from a DOCX file.
+
+    Args:
+        doc_id (str): DOCX filename.
+
+    Returns:
+        str: Extracted text or error message.
+    """
     path = os.path.join(DATA_DIR, doc_id)
     try:
         doc = docx.Document(path)
@@ -64,6 +103,16 @@ def load_docx(doc_id: str) -> str:
 
 
 def load_srt(doc_id: str) -> str:
+    """
+    Extract and clean text from an SRT subtitle file.
+    Removes sequence numbers and timestamps, keeping only subtitle lines.
+
+    Args:
+        doc_id (str): SRT filename.
+
+    Returns:
+        str: Cleaned subtitle text.
+    """
     
     path = os.path.join("data", doc_id)
     lines = []

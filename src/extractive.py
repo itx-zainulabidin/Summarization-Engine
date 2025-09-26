@@ -4,6 +4,17 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 
 def textrank_sentences(sentences, top_k=12):
+    """
+    Run TextRank on a list of sentences and return the top-ranked ones.
+
+    Args:
+        sentences (list[str]): List of input sentences.
+        top_k (int): Number of sentences to keep (default: 12).
+
+    Returns:
+        list[dict]: List of top-ranked sentences in the form:
+            [{"id": int, "text": str}, ...]
+    """
     if not sentences:
         return []
 
@@ -14,6 +25,26 @@ def textrank_sentences(sentences, top_k=12):
 
 
 def run_textrank(sentences, top_k=12):
+    """
+    Core TextRank algorithm implementation for sentence ranking.
+
+    Steps:
+    1. Convert sentences into TF-IDF vectors.
+    2. Compute cosine similarity matrix between all pairs of sentences.
+    3. Build a similarity graph where:
+        - Nodes = sentences
+        - Edges = similarity scores
+    4. Apply PageRank algorithm to compute sentence importance.
+    5. Return the top-k ranked sentences.
+
+    Args:
+        sentences (list[str]): List of sentences.
+        top_k (int): Number of sentences to return.
+
+    Returns:
+        list[str]: Top-ranked sentences.
+    """
+    
     if not sentences:
         return []
 

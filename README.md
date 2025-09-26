@@ -37,8 +37,3 @@ Files of interest:
 - src/api/main.py        : FastAPI app and endpoint
 - src/abstractive_train.py : Training script template (HF Trainer)
 - data/sample_text.txt   : Example text to summarize
-
-How to plug your own model:
-- In `src/inference.py`, set `MODEL_NAME` to a local path or HF model id.
-- If offline, download model weights manually and set `MODEL_LOCAL_PATH` to that folder.
-
